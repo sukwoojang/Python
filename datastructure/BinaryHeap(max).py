@@ -1,4 +1,4 @@
-class BinaryHeep:
+class BinaryHeap:
     def __init__(self):
         self.x = [None]
 
@@ -16,11 +16,11 @@ class BinaryHeep:
             pidx = cidx // 2
 
     def pop(self):
-        _ = self.x[1]
+        _tmp = self.x[1]
         self.x[1], self.x[-1] = self.x[-1], self.x[1]
         self.x = self.x[:-1]
         self.heapify()
-        return _
+        return _tmp
 
     def child(self, idx):
         lidx = 2 * idx
@@ -47,7 +47,7 @@ class BinaryHeep:
             pidx += 1
 
 
-h = BinaryHeep()
+h = BinaryHeap()
 
 for i in range(1, 10):
     h.push(i)
